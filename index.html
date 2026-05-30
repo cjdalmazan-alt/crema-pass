@@ -136,6 +136,10 @@ body {
 .hero-cta {
   margin-top: 52px;
   animation: fadeUp 0.8s 0.55s ease both;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-primary {
@@ -156,6 +160,81 @@ body {
 .btn-primary:hover {
   background: var(--caramel-warm);
   transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--cream);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.07);
+  transform: translateY(-1px);
+}
+
+/* ─── MENU CALLOUT ─── */
+.menu-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(242,196,109,0.1);
+  border: 1px solid rgba(242,196,109,0.3);
+  border-radius: 4px;
+  padding: 18px 28px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.menu-callout-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.menu-callout-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--cream);
+}
+
+.menu-callout-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--on-dark-secondary);
+  line-height: 1.5;
+}
+
+.menu-callout-link {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(242,196,109,0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.menu-callout-link:hover {
+  color: var(--caramel-warm);
+  border-color: var(--caramel-warm);
 }
 
 .hero-scroll-hint {
@@ -981,6 +1060,25 @@ body {
   transform: translateY(-1px);
 }
 
+.sum-menu-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196,122,43,0.35);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.sum-menu-link:hover {
+  color: var(--caramel-warm);
+  border-color: var(--caramel-warm);
+}
+
 /* Steps column */
 .sum-steps {
   display: flex;
@@ -1137,7 +1235,8 @@ body {
   .footer-contact-val { font-size: 15px; }
   .pull-quote blockquote { font-size: 20px; }
   .pull-quote { padding: 36px 28px; }
-  .summary-body { grid-template-columns: 1fr !important; }
+  .menu-callout { flex-direction: column; align-items: flex-start; gap: 14px; padding: 16px 20px; }
+  .hero-cta { flex-direction: column; align-items: center; gap: 12px; }
   .summary-divider-v { display: none !important; }
   .summary-col { padding: 24px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .summary-col:last-child { border-bottom: none; }
@@ -1275,6 +1374,9 @@ body {
   .footer-fine { font-size: 6.5pt !important; margin-top: 8mm !important; color: var(--on-dark-muted) !important; }
 
   .sum-register-btn { display: none !important; }
+  .sum-menu-link { display: none !important; }
+  .btn-secondary { display: none !important; }
+  .menu-callout-link { display: none !important; }
   /* ── Summary page ── */
   .summary-page {
     page-break-before: always;
@@ -1331,6 +1433,7 @@ body {
   <p class="hero-sub">Your favourite premium coffee, delivered daily &mdash; paid once, enjoyed on your terms.</p>
   <div class="hero-cta">
     <a href="#packages" class="btn-primary">See the Packages</a>
+    <a href="https://drive.google.com/file/d/1uRBRamOsnzB9hvyeye3NpG_IYS7ebIZ_/view?usp=sharing" target="_blank" class="btn-secondary">View the Menu</a>
   </div>
   <div class="hero-scroll-hint">Scroll</div>
 </section>
@@ -1366,7 +1469,15 @@ body {
   <div class="packages-inner">
     <div class="section-tag reveal">The Passes</div>
     <h2 class="section-headline reveal" style="margin-bottom:12px;">Four passes,<br><em>one great cup.</em></h2>
-    <p class="section-lead reveal" style="margin-bottom:48px;">All packages include free daily delivery within Zamboanga City and expire 30 days from purchase.</p>
+    <p class="section-lead reveal" style="margin-bottom:32px;">All packages include free daily delivery within Zamboanga City and expire 30 days from purchase.</p>
+
+    <div class="menu-callout reveal">
+      <div class="menu-callout-text">
+        <span class="menu-callout-title">Claim any drink on the menu</span>
+        <span class="menu-callout-sub">Your pass covers any beverage we serve &mdash; coffee, non-coffee, or otherwise. No restrictions.</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1uRBRamOsnzB9hvyeye3NpG_IYS7ebIZ_/view?usp=sharing" target="_blank" class="menu-callout-link">Browse the Menu &rarr;</a>
+    </div>
 
     <div class="pkg-grid">
 
@@ -1616,6 +1727,7 @@ body {
         </div>
         <div class="sum-best-note">&#x2605; Package B offers the best balance of value and convenience.</div>
         <a href="https://forms.gle/zcTHsYXgGvh9aoFeA" target="_blank" class="sum-register-btn">Register now &rarr;</a>
+        <a href="https://drive.google.com/file/d/1uRBRamOsnzB9hvyeye3NpG_IYS7ebIZ_/view?usp=sharing" target="_blank" class="sum-menu-link">View full menu &rarr;</a>
       </div>
 
       <div class="summary-divider-v"></div>
